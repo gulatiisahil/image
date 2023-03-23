@@ -59,3 +59,6 @@ At line:4 char:8
 +        ~~~~~
     + CategoryInfo          : ObjectNotFound: (rustc:String) [], CommandNotFoundException
     + FullyQualifiedErrorId : CommandNotFoundException
+ 
+Adding Rust install path to system PATH environment variable...
+Rust install path added to system PATH environment variable
