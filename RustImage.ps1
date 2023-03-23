@@ -10,3 +10,13 @@ if ((& rustc --version 2>&1) -notmatch $rustVersion) {
 } else {
     Write-Host "Rust version $rustVersion is already installed."
 }
+
+
+// 
+& : The term 'rustc' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, verify that 
+the path is correct and try again.
+At line:3 char:8
++ if ((& rustc --version 2>&1) -notmatch $rustVersion) {
++        ~~~~~
+    + CategoryInfo          : ObjectNotFound: (rustc:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
