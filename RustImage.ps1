@@ -26,6 +26,29 @@ if ((& rustc --version 2>&1) -notmatch $rustVersion) {
     Write-Host "Rust version $rustVersion is already installed."
 }
 
+v3
+$rustVersion = "1.58.0"
+$rustInstallPath = "$env:USERPROFILE\.cargo\bin"
+
+if ((& rustc --version 2>&1) -notmatch $rustVersion) {
+    Write-Host "Rust version $rustVersion is not installed. Installing Rust..."
+    $url = "https://win.rustup.rs/x86_64"
+    $exePath = "$env:TEMP\rustup-init.exe"
+    Invoke-WebRequest -Uri $url -OutFile $exePath
+    Start-Process -FilePath $exePath -ArgumentList "/silent" -Wait
+    Write-Host "Rust version $rustVersion has been installed successfully."
+}
+
+if ($env:Path.Split(';') -notcontains $rustInstallPath) {
+    Write-Host "Adding Rust install path to system PATH environment variable..."
+    $env:Path += ";$rustInstallPath"
+    [Environment]::SetEnvironmentVariable("Path", $env:Path, "Machine")
+    Write-Host "Rust install path added to system PATH environment variable."
+} else {
+    Write-Host "Rust install path is already in system PATH environment variable."
+}
+
+
 
 
 // 
