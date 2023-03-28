@@ -13,15 +13,15 @@
  "ghc"
  "git"
  "git-lfs"
- "imagemagick'
- "inno-script-studio'
+ "imagemagick"
+ "inno-script-studio"
  "jq"
  "kind"
  "kubernetes-helm"
  "hg"
  "mingw"
  "nsis"
- "openssl.light'
+ "openssl.light"
  "packer"
  "pulumi"
  "r"
@@ -31,5 +31,5 @@
  "swig"
 "vswhere"
  "winappdriver"
- "wixtoolset" #(Having issue while installing dependency Donet3)
+ "wixtoolset"      
  "zstandard"
